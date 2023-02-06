@@ -1,0 +1,56 @@
+<div class="px-52 py-5">
+  <h1 class="text-3xl text-center text-blue-900 mb-3">Exercise</h1>
+  <h2 class="text-xl mb-5">Parent</h2>
+
+  <div class="flex justify-between mb-10">
+    <div class="user p-5">
+      <h3 class="mb-3">User</h3>
+      <div class="overflow-x-auto">
+        <table class="table w-full">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th></th>
+              <th class="w-[200px]">Name</th>
+              <th class="w-[200px]">Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- row 1 -->
+            <tr *ngFor="let user of users,index as i">
+              <th >{{i+1}}</th>
+              <td>{{user}}</td>
+              <td><button class="btn btn-warning" (click)="removeUser(i)">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="admin p-5">
+      <h3 class="mb-3">Admin</h3>
+      <table class="table w-full">
+        <!-- head -->
+        <thead>
+          <tr>
+            <th></th>
+            <th class="w-[200px]">Name</th>
+            <th class="w-[200px]">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- row 1 -->
+          <tr *ngFor="let admin of admins,index as i">
+            <th>{{i+1}}}</th>
+            <td>{{admin}}</td>
+            <td><button class="btn btn-warning" (click)="removeAdmin(i)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<!-- 
+  <button class="btn btn-primary" (click)="check()">check</button> -->
+ 
+    <app-childone  (user) = "onUserCreate($event)" (admin) = "onAdminCreate($event)" ></app-childone>
+ 
+</div>
